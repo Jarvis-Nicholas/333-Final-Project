@@ -26,3 +26,6 @@ class testPokemonOwnerPokemon(unittest.TestCase):
 
     def test_pokemon_health(self):
         self.assertEqual(self.owner.team[0].health, self.pokemon.health)
+
+if __name__ == '__main__':
+    unittest.main()
