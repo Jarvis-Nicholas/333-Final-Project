@@ -4,7 +4,7 @@ CS 333 Final Project: Pokemon
 Date: 4/25/2023
 """
 
-import pokemon as po
+#import pokemon as po
 
 class PokemonOwner:
     def __init__(self, n):
