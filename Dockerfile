@@ -10,7 +10,7 @@ WORKDIR /usr/src/app
 #RUN pip install --no-cache-dir -r requirements.txt
 
 #RUN pip update
-RUN pip install --no-cache-dir -r
+#RUN pip install --no-cache-dir -r
 # Copies all files from current directory
 COPY . .
 
