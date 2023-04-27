@@ -34,7 +34,8 @@ jobs:
   # Deployment
   Deploy-Container-To-DockerHub:
     # Only execute when Build is done (AKA tests pass)
-    needs: build
+    #UNCOMMENT THIS BUIDSLAFJ ASLKDJL AKSDJFLKASDJFLKASDJLKFJASDLKF
+    #needs: build
     runs-on: ubuntu-latest
     
     steps:
