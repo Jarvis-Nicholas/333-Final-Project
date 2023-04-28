@@ -9,7 +9,7 @@ import random
 
 class Pokemon:
 
-    def __init__(self, n, t, h):
+    def __init__(self, n: str, t: str, h: int):
         self.name = n
         self.type = t
         self.health = h
@@ -31,3 +31,7 @@ class Pokemon:
         if (self.health <= 0):
             return True
         return False
+    
+    def display_pokemon(self):
+        # Print with alignment
+        print('{:>12}  {:>12}  {:>12}'.format(self.name, self.type, self.health), end="")

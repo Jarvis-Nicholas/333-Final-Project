@@ -4,7 +4,7 @@ CS 333 Final Project: Pokemon
 Date: 4/25/2023
 """
 
-#import pokemon as po
+import pokemon as po
 
 class PokemonOwner:
     def __init__(self, n):
@@ -24,3 +24,9 @@ class PokemonOwner:
 
     def increase_losses(self):
         self.losses = self.losses + 1
+
+    def display_team(self):
+        # Print with alignment
+        print('{:>12}  {:>12}  {:>12}'.format("NAME:", "TYPE:", "HEALTH:"), "\n")
+        for i in range(0, len(self.team)):
+            self.team[i].display_pokemon()
