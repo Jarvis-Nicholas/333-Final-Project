@@ -4,7 +4,8 @@ CS 333 Final Project: Pokemon
 Date: 4/25/2023
 """
 
-import pokemon as po
+import pokemon as pk
+import random
 
 class PokemonOwner:
     def __init__(self, n):
@@ -30,3 +31,11 @@ class PokemonOwner:
         print('{:>12}  {:>12}  {:>12}'.format("NAME:", "TYPE:", "HEALTH:"), "\n")
         for i in range(0, len(self.team)):
             self.team[i].display_pokemon()
+
+    def create_team(self):
+        # Read input file
+        for i in range(0, 6):
+            input_line = random.choice(list(open('pokemon_list.txt')))
+            parsed_line = input_line.split(" ")
+            pokemon = pk.Pokemon(parsed_line[0], parsed_line[1], parsed_line[2])
+            self.team.append(pokemon)
