@@ -30,8 +30,26 @@ class PokemonOwner:
         # Print with alignment
         print('{:>12}  {:>12}  {:>12}'.format("NAME:", "TYPE:", "HEALTH:"), "\n")
         for i in range(0, len(self.team)):
+            print(i + 1, end="")
             self.team[i].display_pokemon()
         print()
+    
+    def swap_pokemon(self):
+        user_input = int(input("Switch with which number Pokemon?"))
+        
+    def team_is_dead(self):
+        dead_counter = 0
+
+        # Check every Pokemon
+        for i in range (0, len(self.team)):
+            if (self.team[i].is_dead() == True):
+                counter = counter + 1
+        # All Dead
+        if (dead_counter == len(self.team)):
+            return True
+        # Not all dead
+        else:
+            return False
 
     def create_team(self):
         # Read input file
