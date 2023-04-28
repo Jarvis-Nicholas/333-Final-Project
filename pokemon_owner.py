@@ -31,6 +31,7 @@ class PokemonOwner:
         print('{:>12}  {:>12}  {:>12}'.format("NAME:", "TYPE:", "HEALTH:"), "\n")
         for i in range(0, len(self.team)):
             self.team[i].display_pokemon()
+        print()
 
     def create_team(self):
         # Read input file

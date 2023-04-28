@@ -20,18 +20,18 @@ def main():
     # Menu
     print("\nBegin your journey!")
     while True:
-        print("1: Poke Center\n" + "2: View Pokemon\n" + "3: Battle Stadium\n" + "4: Exit")
+        print("1: View Pokemon\n" + "2: Poke Center\n" + "3: Battle Stadium\n" + "4: Exit")
         user_input = int(input())
 
         if (user_input == 1):
-            pass
-        elif (user_input == 2):
             player.display_team()
+        elif (user_input == 2):
+            pass
         elif (user_input == 3):
             pass
-        elif (user_input == 0):
+        elif (user_input == 4):
             exit()
         else:
-            print("Please enter a valid input!")
+            print("Please enter a valid input!\n")
 
 main()
