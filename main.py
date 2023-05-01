@@ -34,7 +34,7 @@ def main():
     print("\nBegin your journey!")
     
     while True:
-        print("1: View Pokemon\n" + "2: Poke Center\n" + "3: Battle Stadium\n" + "4: Exit")
+        print("\n1: View Pokemon\n" + "2: Poke Center\n" + "3: Battle Stadium\n" + "4: Exit")
         user_input = int(input())
 
         if (user_input == 1):
@@ -48,7 +48,7 @@ def main():
         elif (user_input == 2):
                 center.display_team()
                 
-                print("1: Buy Pokemon\n" + "2: Sell Pokemon\n" + "3: Trade Pokemon\n" + "4: Exit")
+                print("\n1: Buy Pokemon\n" + "2: Sell Pokemon\n" + "3: Trade Pokemon\n" + "4: Exit")
                 center_input = int(input())
                 
                 
