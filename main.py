@@ -11,6 +11,7 @@ Date: 4/25/2023
 import pokemon as pk
 import pokemon_owner as po
 import battle_stadium as bs
+import poke_center as pc
 
 def main():
     print("**************************************************")
@@ -25,6 +26,11 @@ def main():
     rival = po.PokemonOwner("Gary")
     rival.create_team()
 
+    # Create Poke Center
+    center = pc.PokemonCenter()
+    center.create_inventory()
+
+
     # Menu
     print("\nBegin your journey!")
     
@@ -34,22 +40,31 @@ def main():
 
         if (user_input == 1):
             player.display_team()
-            switch_choice = int(input("Switch Pokemon around?  Yes:1  No: 2 "))
+            switch_choice = int(input("Switch Pokemon around?  Yes:1  No: 2  "))
             if(switch_choice == 1):
                 switch_input1 = int(input("Which Pokemon would you like to switch? "))
                 switch_input2 = int(input("Who do you want to switch with? "))
                 player.swap_pokemon(switch_input1 - 1, switch_input2 - 1)
                 player.display_team()
         elif (user_input == 2):
-            pass
-        
+            if (len(center.inventory) == 0):
+                print("We are all out of Pokemon! Please come back another time!")
+            else:
+                center.display_inventory()
+                center_input = int("Buy Pokemon: 1  Sell Pokemon: 2  Trade Pokemon: 3  ")
+                if (center_input == 1 and len(center.inventory) != 1):
+                    input = int("Which Pokemon would you like to buy?  ")
+                    
+                elif (center_input == 2):
+
+                        input = int("")
         elif (user_input == 3):
 
 
             if (player.team_is_dead()):
                 print("All your Pokemon are DEAD!! Please visit the Poke Center ASAP!!!")
                 exit()
-                
+
             # First round
             player1 = player
             player2 = rival
