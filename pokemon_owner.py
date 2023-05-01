@@ -32,9 +32,9 @@ class PokemonOwner:
         for i in range(0, len(self.team)):
             print(i + 1, end="")
             self.team[i].display_pokemon()
-    
+        print()
+
     def swap_pokemon(self, current_index, new_index):
-        #user_input = int(input("Switch with which number Pokemon?"))
         # In sizing
         if ((current_index >= 0 and current_index <= len(self.team) - 1) and (new_index >= 0 and new_index <= len(self.team) - 1)):
             self.team[current_index], self.team[new_index] = self.team[new_index], self.team[current_index]
@@ -45,7 +45,7 @@ class PokemonOwner:
         # Check every Pokemon
         for i in range (0, len(self.team)):
             if (self.team[i].is_dead() == True):
-                counter = counter + 1
+                dead_counter = dead_counter + 1
         # All Dead
         if (dead_counter == len(self.team)):
             return True

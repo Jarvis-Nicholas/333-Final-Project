@@ -64,7 +64,6 @@ class testPokemonOwner(unittest.TestCase):
         good_lower = 0
         good_higher = 1
 
-
         # Current too small
         self.owner.swap_pokemon(small_index , good_higher)
         self.assertEqual(self.owner.team[0], self.pokemon)
@@ -84,6 +83,22 @@ class testPokemonOwner(unittest.TestCase):
         self.owner.swap_pokemon(good_lower, large_index)
         self.assertEqual(self.owner.team[0], self.pokemon)
         self.assertEqual(self.owner.team[1], self.pokemon2)
+
+    def test_team_is_dead_true(self):
+        self.owner.add_pokmeon(self.pokemon)
+        self.owner.add_pokmeon(self.pokemon2)
+        self.pokemon.health = 0
+        self.pokemon2.health = 0
+
+        self.assertTrue(self.owner.team_is_dead())
+
+    def test_team_is_dead_false(self):
+        self.owner.add_pokmeon(self.pokemon)
+        self.owner.add_pokmeon(self.pokemon2)
+        self.pokemon.health = 0
+        self.pokemon2.health = 1
+
+        self.assertFalse(self.owner.team_is_dead())
 
 if __name__ == '__main__':
     unittest.main()

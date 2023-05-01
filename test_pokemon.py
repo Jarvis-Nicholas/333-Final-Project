@@ -20,6 +20,8 @@ class testPokmeon(unittest.TestCase):
         self.assertEqual(self.pokemon.name, "name")
         self.assertEqual(self.pokemon.type, "type")
         self.assertEqual(self.pokemon.health, 10) 
+        self.assertEqual(self.pokemon.deaths, 0.0)
+        self.assertEqual(self.pokemon.kills, 0.0)
 
     def test_attack(self):
         # 0 <= health <= 20
