@@ -19,6 +19,7 @@ class testPokmeon(unittest.TestCase):
     def test_constructor(self):
         self.assertEqual(self.pokemon.name, "name")
         self.assertEqual(self.pokemon.type, "type")
+        self.assertEqual(self.pokemon.max_health, 10) 
         self.assertEqual(self.pokemon.health, 10) 
         self.assertEqual(self.pokemon.deaths, 0.0)
         self.assertEqual(self.pokemon.kills, 0.0)
@@ -28,13 +29,27 @@ class testPokmeon(unittest.TestCase):
         self.assertGreaterEqual(self.pokemon.attack(), 0)
         self.assertLessEqual(self.pokemon.attack(), 20)
 
-    def test_gain_health(self):
+    def test_gain_health_overflow(self):
         # Mark new health
-        self.new_health = self.pokemon.health + 1
+        #self.pokemon.health = 5
+        #self.new_health = self.pokemon.health + 1
 
         # Increase health
-        self.pokemon.gain_health(1)
-        self.assertEqual(self.new_health, self.pokemon.health)
+        self.pokemon.gain_health(100)
+        self.assertEqual(self.pokemon.health, self.pokemon.max_health)
+
+    def test_gain_health_underflow(self):
+        self.pokemon.health = 5
+
+        self.pokemon.gain_health(2)
+        self.assertEqual(self.pokemon.health, 5 + 2)
+        self.assertLess(self.pokemon.health, self.pokemon.max_health)
+
+    def test_gain_health_dead_to_max(self):
+        self.pokemon.health = 0
+
+        self.pokemon.gain_health(self.pokemon.max_health)
+        self.assertEqual(self.pokemon.health, self.pokemon.max_health)
 
     def test_lose_health_decrement(self):
         # Mark new health
@@ -44,15 +59,17 @@ class testPokmeon(unittest.TestCase):
         self.pokemon.lose_health(1)
         self.assertEqual(self.new_health, self.pokemon.health)
 
+
+    def test_lose_health_negative_to_zero(self):
+        # Lose more than max
+        self.pokemon.lose_health(self.pokemon.max_health + 1)
+
+        self.assertEqual(self.pokemon.health, 0)
+
     def test_is_dead_not_dead(self):
         # Not Dead
         self.pokemon.health = 1
         self.assertFalse(self.pokemon.is_dead())
-
-    def test_is_dead_negative_health(self):
-        # Negative
-        self.pokemon.health = -1
-        self.assertTrue(self.pokemon.is_dead())
 
     def test_is_dead_zero(self):
         # Zero

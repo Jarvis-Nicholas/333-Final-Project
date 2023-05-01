@@ -12,6 +12,7 @@ class Pokemon:
     def __init__(self, n: str, t: str, h: int):
         self.name = n
         self.type = t
+        self.max_health = h
         self.health = h
         self.kills = 0.0
         self.deaths = 0.0
@@ -24,13 +25,21 @@ class Pokemon:
         return random.choice(nums)
     
     def gain_health(self, h):
-        self.health = self.health + h
+        # Given too much health
+        if (h + self.health > self.max_health):
+            self.health = self.max_health
+        else:
+            self.health = self.health + h
+
 
     def lose_health(self, h):
         self.health = self.health - h
 
+        if (self.health < 0):
+            self.health = 0
+
     def is_dead(self):
-        if (self.health <= 0):
+        if (self.health == 0):
             return True
         return False
 

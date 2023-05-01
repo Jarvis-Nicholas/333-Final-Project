@@ -44,12 +44,15 @@ def main():
             pass
         
         elif (user_input == 3):
+
+
+            if (player.team_is_dead()):
+                print("All your Pokemon are DEAD!! Please visit the Poke Center ASAP!!!")
+                exit()
+                
             # First round
             player1 = player
             player2 = rival
-
-
-
             game_over = False
             """
             while game_over == False:
@@ -60,6 +63,9 @@ def main():
                 player_index = bs.get_index(player)
                 rival_index = bs.get_index(rival)
             """
+
+            # Heal rival
+            
         elif (user_input == 4):
             exit()
         
