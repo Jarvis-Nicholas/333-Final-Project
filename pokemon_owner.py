@@ -8,23 +8,14 @@ import pokemon as pk
 import random
 
 class PokemonOwner:
-    def __init__(self, n):
-        self.name = n
+    def __init__(self):
         self.team = []
-        self.wins = 0
-        self.losses = 0
 
     def remove_pokemon(self, p):
         self.team.remove(p)
 
     def add_pokmeon(self, p):
         self.team.append(p)
-
-    def increase_wins(self):
-        self.wins = self.wins + 1
-
-    def increase_losses(self):
-        self.losses = self.losses + 1
 
     def display_team(self):
         # Print with alignment
@@ -34,10 +25,20 @@ class PokemonOwner:
             self.team[i].display_pokemon()
         print()
 
-    def swap_pokemon(self, current_index, new_index):
+    def swap_pokemon_team_members(self, current_index, new_index):
         # In sizing
         if ((current_index >= 0 and current_index <= len(self.team) - 1) and (new_index >= 0 and new_index <= len(self.team) - 1)):
             self.team[current_index], self.team[new_index] = self.team[new_index], self.team[current_index]
+
+
+
+    def create_team(self):
+        # Read input file
+        for i in range(0, 6):
+            input_line = random.choice(list(open('pokemon_list.txt')))
+            parsed_line = input_line.split(" ")
+            pokemon = pk.Pokemon(parsed_line[0], parsed_line[1], parsed_line[2])
+            self.team.append(pokemon)
 
     def team_is_dead(self):
         dead_counter = 0
@@ -52,11 +53,3 @@ class PokemonOwner:
         # Not all dead
         else:
             return False
-
-    def create_team(self):
-        # Read input file
-        for i in range(0, 6):
-            input_line = random.choice(list(open('pokemon_list.txt')))
-            parsed_line = input_line.split(" ")
-            pokemon = pk.Pokemon(parsed_line[0], parsed_line[1], parsed_line[2])
-            self.team.append(pokemon)

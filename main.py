@@ -8,8 +8,7 @@ Date: 4/25/2023
 # coverage report
 
 
-import pokemon as pk
-import pokemon_owner as po
+import pokemon_trainer as pt
 import battle_stadium as bs
 import poke_center as pc
 
@@ -18,12 +17,12 @@ def main():
     print("                  ---------------\n                 | POKEMON FUN!! |\n                  ---------------\n") 
     user_name = str(input("-Welcome to your Pokemon adventure!! What is your name?\n"))
 
-    # Create Owner
-    player = po.PokemonOwner(user_name)
+    # Create trainer
+    player = pt.PokemonTrainer(user_name)
     player.create_team()
 
     # Create Rival
-    rival = po.PokemonOwner("Gary")
+    rival = pt.PokemonTrainer("Gary")
     rival.create_team()
 
     # Create Poke Center
@@ -44,7 +43,7 @@ def main():
             if(switch_choice == 1):
                 switch_input1 = int(input("Which Pokemon would you like to switch? "))
                 switch_input2 = int(input("Who do you want to switch with? "))
-                player.swap_pokemon(switch_input1 - 1, switch_input2 - 1)
+                player.swap_pokemon_team_members(switch_input1 - 1, switch_input2 - 1)
                 player.display_team()
         elif (user_input == 2):
             if (len(center.inventory) == 0):
@@ -54,7 +53,7 @@ def main():
                 center_input = int("Buy Pokemon: 1  Sell Pokemon: 2  Trade Pokemon: 3  ")
                 if (center_input == 1 and len(center.inventory) != 1):
                     input = int("Which Pokemon would you like to buy?  ")
-                    
+
                 elif (center_input == 2):
 
                         input = int("")
