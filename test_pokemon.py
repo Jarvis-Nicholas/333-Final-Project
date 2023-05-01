@@ -57,5 +57,30 @@ class testPokmeon(unittest.TestCase):
         self.pokemon.health = 0
         self.assertTrue(self.pokemon.is_dead())
 
+    def test_increase_kills(self):
+        old_kills = self.pokemon.kills
+        self.pokemon.increase_kills()
+        self.assertEqual(self.pokemon.kills, old_kills + 1)
+
+    def test_increase_deaths(self):
+        old_deaths = self.pokemon.deaths
+        self.pokemon.increase_deaths()
+        self.assertEqual(self.pokemon.deaths, old_deaths + 1)
+
+    def test_get_kd_zero_deaths(self):
+        self.pokemon.deaths = 0
+        self.pokemon.kills = 1
+        self.assertEqual(self.pokemon.get_kd(), self.pokemon.kills)
+
+    def test_get_kd_whole_number(self):
+        self.pokemon.deaths = 1
+        self.pokemon.kills = 5
+        self.assertEqual(self.pokemon.get_kd(), self.pokemon.kills)
+
+    def test_kd_frational(self):
+        self.pokemon.deaths = 2
+        self.pokemon.kills = 5
+        self.assertEqual(self.pokemon.get_kd(), 5.0 / 2.0)
+
 if __name__ == '__main__':
     unittest.main()

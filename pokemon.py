@@ -13,6 +13,8 @@ class Pokemon:
         self.name = n
         self.type = t
         self.health = h
+        self.kills = 0.0
+        self.deaths = 0.0
 
     def attack(self):
         nums = []
@@ -32,6 +34,18 @@ class Pokemon:
             return True
         return False
 
+    def increase_kills(self):
+        self.kills = self.kills + 1
+
+    def increase_deaths(self):
+        self.deaths = self.deaths + 1
+
+    def get_kd(self):
+        if self.deaths == 0:
+            return self.kills
+        else:
+            return self.kills / self.deaths
+
     def display_pokemon(self):
         # Print with alignment
-        print('{:>12}  {:>12}  {:>12}'.format(self.name, self.type, self.health), end="")
+        print('{:>12}  {:>12}  {:>12}'.format(self.name, self.type, self.health))

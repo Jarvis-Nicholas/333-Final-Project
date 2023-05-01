@@ -23,6 +23,9 @@ def main():
 
     # Menu
     print("\nBegin your journey!")
+    player.display_team()
+    
+    """
     while True:
         print("1: View Pokemon\n" + "2: Poke Center\n" + "3: Battle Stadium\n" + "4: Exit")
         user_input = int(input())
@@ -32,6 +35,12 @@ def main():
         elif (user_input == 2):
             pass
         elif (user_input == 3):
+            # First round
+            player1 = player
+            player2 = rival
+
+
+
             game_over = False
             while game_over == False:
                     # Dont want to get index unless sure that team has atleast 1 Pokemon alive
@@ -44,5 +53,5 @@ def main():
             exit()
         else:
             print("Please enter a valid input!\n")
-
+    """
 main()

@@ -5,7 +5,7 @@ Date: 4/25/2023
 """
 
 # Command line executables:
-# python3 -m coverage run test_pokemon_owner_pokemon.py -v -b
+# python3 -m coverage run test_pokemon_owner_AND_pokemon.py -v -b
 # python3 -m coverage report 
 
 import unittest
