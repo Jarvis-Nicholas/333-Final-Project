@@ -17,8 +17,9 @@ def main():
     print("**************************************************")
     print("                  ---------------\n                 | POKEMON FUN!! |") 
     print("                  ---------------\n")
-    user_name = str(input("-Welcome to your Pokemon adventure!! What is your name?\n"))
-
+    print("-Welcome to your Pokemon adventure!! What is your name?\n")
+    user_name = str(input)
+    
     # Create trainer
     player = pt.PokemonTrainer(user_name)
     player.create_team()
