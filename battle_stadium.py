@@ -4,7 +4,7 @@ CS 333 Final Project: Pokemon
 Date: 4/25/2023
 """
 
-# Battle Stadium Utility Fucntions
+# Battle Stadium Utility Functions
 
 def play_round(player1, player2, battle_choice):
 
