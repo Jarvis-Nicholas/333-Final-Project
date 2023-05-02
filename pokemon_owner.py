@@ -18,7 +18,8 @@ class PokemonOwner:
         self.team.append(p)
 
     def index_in_range(self, input_index):
-        if (input_index >= 0 and input_index <= len(self.team)):
+        index = input_index - 1
+        if (index >= 0 and index <= len(self.team) - 1 and len(self.team) != 0):
             return True
         else:
             return False

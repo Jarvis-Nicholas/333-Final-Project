@@ -19,9 +19,5 @@ class testPokemonTrainer(unittest.TestCase):
         self.trainer = pt.PokemonTrainer()
         self.pokemon = pk.Pokemon("name", "type", 10)
         self.pokemon2 = pk.Pokemon("name2", "type2", 15)
-
-        self.negative_index = -1
-        
-
-
+ 
     def test_give_pokemon(self):

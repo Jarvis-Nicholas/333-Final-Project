@@ -47,6 +47,31 @@ class testPokemonOwner(unittest.TestCase):
         self.assertFalse(self.owner.team_is_dead()) 
 
 
+    def test_index_in_range_empty_team(self):
+        # Empty team
+        self.assertFalse(self.owner.index_in_range(1))
+
+    def test_index_in_range_zeroes(self):
+        # 0 to 0 (len of 1)
+        self.owner.add_pokmeon(self.pokemon)
+        self.assertTrue(self.owner.index_in_range(1))
+
+        # input 0, so really -1
+        self.assertFalse(self.owner.index_in_range(0))
+
+
+    def test_index_in_range_greater_length(self):
+        # Len > 1
+        self.owner.add_pokmeon(self.pokemon)
+        self.owner.add_pokmeon(self.pokemon)
+
+        self.assertTrue(self.owner.index_in_range(1))
+        self.assertTrue(self.owner.index_in_range(2))
+
+        # Index == len (false return)
+        self.assertFalse(self.owner.index_in_range(3))
+
+
     def test_swap_pokemon_correct_indices(self):
         self.owner.add_pokmeon(self.pokemon)
         self.owner.add_pokmeon(self.pokemon2)
