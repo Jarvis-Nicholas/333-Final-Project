@@ -141,7 +141,7 @@ def main():
                 print("5: Change Pokemon Max Health\n" + "6: Exit")
                 lab_input = int(input())
                 player.display_team()
-                
+
                 if (lab_input == 1):
                     rl.heal_team(player)
 
@@ -182,10 +182,10 @@ def main():
                     index = int(input()) - 1
 
                     print("What is their new max health?  ")
-                    choice = int(input())  
+                    ch = int(input())  
 
                     # Rename
-                    rl.change_pokemon_max_health(player, index, choice)                  
+                    rl.change_pokemon_max_health(player, index, ch)                  
                 elif (lab_input == 6):
                     break
         # Exit                                                                   
