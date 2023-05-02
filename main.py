@@ -17,6 +17,11 @@ def main():
     print("**************************************************")
     print("                  ---------------\n                 | POKEMON FUN!! |") 
     print("                  ---------------\n")
+
+    """
+    print("This is the deployment test!!!")
+    """
+
     print("-Welcome to your Pokemon adventure!! What is your name?\n")
     user_name = str(input)
     

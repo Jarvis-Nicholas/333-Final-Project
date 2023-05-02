@@ -1,4 +1,4 @@
-# Command line to run DOCKER_BUILDKIT=0 docker build .
+#Command line to run DOCKER_BUILDKIT=0 docker build .
 
 FROM python:3
 
