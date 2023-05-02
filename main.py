@@ -22,8 +22,7 @@ def main():
     print("This is the deployment test!!!")
     """
 
-    print("-Welcome to your Pokemon adventure!! What is your name?\n")
-    user_name = str(input)
+    user_name = str(input("Welcome to your Pokemon adventure!! What is your name?\n"))
     
     # Create trainer
     player = pt.PokemonTrainer(user_name)
@@ -76,7 +75,8 @@ def main():
                     # Buy
                     if (center_input == 1 ):
                         print("Which Pokemon would you like to buy?  ")
-                        buy_input = int(input) - 1
+                        buy_input = int(input()) - 1
+
                         # Remove from center and give to trainer
                         center.give_pokemon(buy_input + 1, player)
 
@@ -88,7 +88,7 @@ def main():
                     # Sell
                     elif (center_input == 2):
                         print("Which Pokemon would you like to sell?  ")
-                        sell_input = int(input) - 1
+                        sell_input = int(input()) - 1
 
                         # Remove from trainer and give to center 
                         center.take_pokemon(sell_input + 1, player)
@@ -119,7 +119,7 @@ def main():
                 while game_over is False:
                     # Get input
                     print("\n1: Attack\n" + "2:Exit")
-                    battle_choice = int(input)
+                    battle_choice = int(input())
 
                     game_over = bs.play_round(player1, player2, battle_choice)
                     #game_over = bs.check_game_over(player1, player2)
@@ -134,63 +134,65 @@ def main():
                         player2 = temp_trainer
                 
         elif (user_input == 4):
-            # Get input
-            print("\n1: Heal Team\n" + "2: Change Pokemon name\n", end ="")
-            print("3: Change Pokemon Type\n" + "4: Change Pokemon Health\n", end="")
-            print("5: Change Pokemon Max Health\n" + "6: Exit")
-            lab_input = int(input())
-            
-            if (lab_input == 1):
-                rl.heal_team(player)
-
-            elif (lab_input == 2):
+            while True:
                 # Get input
-                print("Which Pokemon would you like to rename?  ")
-                index = int(input) - 1
-
-                print("What is their new name?  ")
-                choice = str(input)  
-
-                # Rename
-                rl.change_pokemon_name(player, index, choice)              
-            
-            elif (lab_input == 3):
-                # Get input
-                print("Which Pokemon would you like to change type?  ")
-                index = int(input) - 1
-
-                print("What is their new type?  ")
-                choice = str(input)  
-
-                # Rename
-                rl.change_pokemon_type(player, index, choice)                   
-            elif (lab_input == 4):
-                # Get input
-                print("Which Pokemon would you like to change health?  ")
-                index = int(input) - 1
-
-                print("What is their new health?  ")
-                choice = int(input)  
-
-                # Rename
-                rl.change_pokemon_health(player, index, choice)                 
-            elif (lab_input == 5):
-                # Get input
-                print("Which Pokemon would you like to change max health?  ")
-                index = int(input) - 1
-
-                print("What is their new max health?  ")
-                choice = int(input)  
-
-                # Rename
-                rl.change_pokemon_max_health(player, index, choice)                  
-            elif (lab_input == 6):
-                break
+                print("\n1: Heal Team\n" + "2: Change Pokemon Name\n", end ="")
+                print("3: Change Pokemon Type\n" + "4: Change Pokemon Health\n", end="")
+                print("5: Change Pokemon Max Health\n" + "6: Exit")
+                lab_input = int(input())
+                player.display_team()
                 
-                                                                  
+                if (lab_input == 1):
+                    rl.heal_team(player)
+
+                elif (lab_input == 2):
+                    # Get input
+                    print("Which Pokemon would you like to rename?  ")
+                    index = int(input()) - 1
+
+                    print("What is their new name?  ")
+                    choice = str(input())  
+
+                    # Rename
+                    rl.change_pokemon_name(player, index, choice)              
+                
+                elif (lab_input == 3):
+                    # Get input
+                    print("Which Pokemon would you like to change type?  ")
+                    index = int(input()) - 1
+
+                    print("What is their new type?  ")
+                    choice = str(input())  
+
+                    # Rename
+                    rl.change_pokemon_type(player, index, choice)                   
+                elif (lab_input == 4):
+                    # Get input
+                    print("Which Pokemon would you like to change health?  ")
+                    index = int(input()) - 1
+
+                    print("What is their new health?  ")
+                    choice = int(input())  
+
+                    # Rename
+                    rl.change_pokemon_health(player, index, choice)                 
+                elif (lab_input == 5):
+                    # Get input
+                    print("Which Pokemon would you like to change max health?  ")
+                    index = int(input()) - 1
+
+                    print("What is their new max health?  ")
+                    choice = int(input())  
+
+                    # Rename
+                    rl.change_pokemon_max_health(player, index, choice)                  
+                elif (lab_input == 6):
+                    break
+        # Exit                                                                   
         elif (user_input == 5):
             exit()
         
+        # Error message
         else:
             print("Please enter a valid input!\n")
     

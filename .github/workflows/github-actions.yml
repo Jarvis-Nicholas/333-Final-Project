@@ -32,7 +32,7 @@ jobs:
           pytest
           
   # Deployment
-  Deploy-Container-To-DockerHub:
+  Deploy-Image-To-DockerHub:
     # Only execute when Build is done (AKA tests pass)
     needs: build
     runs-on: ubuntu-latest
