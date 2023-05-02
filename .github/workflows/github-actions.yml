@@ -56,13 +56,13 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME}}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN}}
 
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v1
-        with:
-          registry: ghcr.io
+      #- name: Login to GitHub Container Registry
+        #uses: docker/login-action@v1
+        #with:
+          #registry: ghcr.io
           #username: ${{ github.repository_owner }}
-          username: njarvis1
-          password: ${{ secrets.GHRC_TOKEN }}
+          #username: njarvis1
+          #password: ${{ secrets.GHRC_TOKEN }}
 
 
       - name: Build and push to Docker Hub
