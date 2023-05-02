@@ -12,7 +12,7 @@ ADD pokemon_owner.py .
 ADD pokemon_trainer.py .
 ADD pokemon.py .
 ADD pokemon_list.txt .
-ADD resarch_lab.py .
+ADD research_lab.py .
 ADD battle_stadium.py .
 
 
