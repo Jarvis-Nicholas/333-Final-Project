@@ -19,7 +19,7 @@ class Pokemon:
 
     def attack(self):
         nums = []
-        for i in range(0, 20):
+        for i in range(1, 20):
             nums.append(i)
 
         return random.choice(nums)

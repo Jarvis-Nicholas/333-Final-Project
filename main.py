@@ -4,7 +4,7 @@ CS 333 Final Project: Pokemon
 Date: 4/25/2023
 """
 
-# coverage run -m unittest discover
+# coverage run -m unittest discover -b
 # coverage report
 
 
