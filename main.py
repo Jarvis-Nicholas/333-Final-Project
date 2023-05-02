@@ -14,7 +14,8 @@ import poke_center as pc
 
 def main():
     print("**************************************************")
-    print("                  ---------------\n                 | POKEMON FUN!! |\n                  ---------------\n") 
+    print("                  ---------------\n                 | POKEMON FUN!! |") 
+    print("                  ---------------\n")
     user_name = str(input("-Welcome to your Pokemon adventure!! What is your name?\n"))
 
     # Create trainer
@@ -36,7 +37,8 @@ def main():
     print("\nBegin your journey!")
     
     while True:
-        print("\n1: View Pokemon\n" + "2: Poke Center\n" + "3: Battle Stadium\n" + "4: Exit")
+        print("\n1: View Pokemon\n" + "2: Poke Center\n", end="")
+        print("3: Battle Stadium\n" + "4: Exit")
         user_input = int(input())
 
         if (user_input == 1):
@@ -59,7 +61,8 @@ def main():
                     center.display_team()
                     
                     # Get input
-                    print("\n1: Buy Pokemon\n" + "2: Sell Pokemon\n" + "3: Trade Pokemon\n" + "4: Exit")
+                    print("\n1: Buy Pokemon\n" + "2: Sell Pokemon\n", end ="")
+                    print("3: Trade Pokemon\n" + "4: Exit")
                     center_input = int(input())
                     
                     
@@ -72,7 +75,8 @@ def main():
 
                     # Trade or sell BUT inventory is empty
                     elif (center_input != 1 and len(center.team) == 0):
-                        print("We are all out of Pokemon! Please come back another time or sell us Pokemon!")
+                        print("We are all out of Pokemon!", end= "")
+                        print("Please come back another time or sell us Pokemon!")
                     
                     # Sell
                     elif (center_input == 2):
