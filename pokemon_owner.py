@@ -19,7 +19,8 @@ class PokemonOwner:
 
     def index_in_range(self, input_index):
         index = input_index - 1
-        if (index >= 0 and index <= len(self.team) - 1 and len(self.team) != 0):
+        #if (index >= 0 and index <= len(self.team) - 1 and len(self.team) != 0):
+        if ((index >= 0) and (index <= len(self.team) - 1) and (len(self.team) != 0)):
             return True
         else:
             return False

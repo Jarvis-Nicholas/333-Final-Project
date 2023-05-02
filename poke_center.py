@@ -4,6 +4,7 @@ CS 333 Final Project: Pokemon
 Date: 4/25/2023
 """
 
+import pokemon_trainer as pt
 import pokemon_owner as po
 
 class PokemonCenter (po.PokemonOwner):
@@ -30,18 +31,26 @@ class PokemonCenter (po.PokemonOwner):
     def take_pokemon(self, input_index, trainer):
         # In sizing
         #if (input_index >= 0 and input_index <= len(self.team)):
-        if (self.index_in_range(input_index - 1)):
+        if (self.index_in_range(input_index)):
             # Add to center
             self.add_pokemon(trainer.team[input_index - 1])
 
             # Remove from trainer
-            trainer.remove_pokemon(trainer.team[input_index])
+            trainer.remove_pokemon(trainer.team[input_index - 1])
 
     def trade_pokemon(self, trainer_index, center_index, trainer):
         # In sizing
-        #if ((trainer_index >= 0 and trainer_index <= len(trainer.team) - 1) and (center_index >= 0 and center_index <= len(self.team) - 1)):
-        if (trainer.index_is_in_range(trainer_index) and self.index_in_range(center_index)): 
-            trainer.team[trainer_index - 1], self.team[center_index - 1] = self.team[center_index - 1], trainer.team[trainer_index - 1]
+        #if ((trainer_index - 1 >= 0 and trainer_index - 1 <= len(trainer.team) - 1) and (center_index - 1 >= 0 and center_index -1 <= len(self.team) - 1)):
+        if ((trainer.index_in_range(trainer_index)) and (self.index_in_range(center_index))): 
+
+            # Temp
+            temp_trainer = pt.PokemonTrainer("temp")
+            temp_trainer.add_pokemon(trainer.team[trainer_index - 1])
+
+            #Swap
+            trainer.team[trainer_index - 1] = self.team[center_index - 1]
+            self.team[center_index - 1] = temp_trainer.team[0] 
+            #trainer.team[trainer_index - 1], self.team[center_index - 1] = trainer.team[center_index - 1], self.team[trainer_index - 1]
             """
 def rename_pokemon(pokemon, new_name: str):
     pokemon.name = new_name

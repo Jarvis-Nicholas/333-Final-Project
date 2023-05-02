@@ -47,6 +47,41 @@ class testPokemonTrainer(unittest.TestCase):
         self.assertEqual(len(self.center.team), 0)
         self.assertEqual(len(self.trainer.team), 2)
 
+    def test_take_pokemon_bad_index(self):
+        self.center.take_pokemon(self.bad_index, self.trainer)
 
+        # Pokemon not taken
+        self.assertEqual(self.center.team[0], self.pokemon)
+        self.assertNotEqual(self.trainer.team[0], self.pokemon)
+        self.assertEqual(len(self.center.team), 1)
+        self.assertEqual(len(self.trainer.team), 1)
+
+    def test_take_pokemon_good_index(self):
+        self.center.take_pokemon(self.good_index, self.trainer)
+
+        # Pokemon taken
+        self.assertEqual(len(self.trainer.team), 0)
+        self.assertEqual(len(self.center.team), 2)
+        self.assertEqual(self.center.team[0], self.pokemon)
+        self.assertEqual(self.center.team[1], self.pokemon1)
+
+    # No swapping
+    def test_trade_pokemon_bad_indices(self):
+        # bad, bad
+        self.center.trade_pokemon(self.bad_index, self.bad_index, self.trainer)
+        self.assertEqual(self.center.team[0], self.pokemon)
+        self.assertEqual(self.trainer.team[0], self.pokemon1)
+
+        # bad, good
+        self.center.trade_pokemon(self.bad_index, self.good_index, self.trainer)
+        self.assertEqual(self.center.team[0], self.pokemon)
+        self.assertEqual(self.trainer.team[0], self.pokemon1)
+    
+    def test_trade_pokemon_good_indices(self):
+        # good, good
+        self.center.trade_pokemon(self.good_index, self.good_index, self.trainer)
+        self.assertEqual(self.center.team[0], self.pokemon1)
+        self.assertEqual(self.trainer.team[0], self.pokemon)
+    
 if __name__ == '__main__':
     unittest.main()

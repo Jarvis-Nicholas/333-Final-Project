@@ -17,14 +17,14 @@ class testPokemonOwnerPokemon(unittest.TestCase):
     def setUp(self):
         self.owner = po.PokemonOwner()
         self.pokemon = pk.Pokemon("name", "type", 10)
-        self.owner.add_pokmeon(self.pokemon)
+        self.owner.add_pokemon(self.pokemon)
 
     # Default name is same
     def test_pokemon_name_default(self):
        self.assertEqual(self.owner.team[0].name, self.pokemon.name)
     
     # Default type is same  
-    def test_pokmeon_type_default(self):
+    def test_pokemon_type_default(self):
         self.assertEqual(self.owner.team[0].type, self.pokemon.type)
 
     # Default health is same
@@ -41,7 +41,7 @@ class testPokemonOwnerPokemon(unittest.TestCase):
         self.assertNotEqual(self.owner.team[0].name, old_name)
 
     # Changing pokemon class updates into owner class   
-    def test_pokmeon_type_change(self):
+    def test_pokemon_type_change(self):
         old_type = self.pokemon.type
         self.pokemon.name = "new type"
 
