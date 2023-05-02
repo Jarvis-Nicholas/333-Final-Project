@@ -14,7 +14,7 @@ class PokemonOwner:
     def remove_pokemon(self, p):
         self.team.remove(p)
 
-    def add_pokmeon(self, p):
+    def add_pokemon(self, p):
         self.team.append(p)
 
     def index_in_range(self, input_index):

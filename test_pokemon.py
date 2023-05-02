@@ -11,7 +11,7 @@ Date: 4/25/2023
 import unittest
 import pokemon as pk
 
-class testPokmeon(unittest.TestCase):
+class testPokemon(unittest.TestCase):
     def setUp(self):
         self.pokemon = pk.Pokemon("name", "type", 10)
         self.new_health = 0

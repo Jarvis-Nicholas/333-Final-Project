@@ -27,8 +27,10 @@ def main():
 
     # Create Poke Center
     center = pc.PokemonCenter()
-    center.create_team()
 
+    # Make large inventory
+    center.create_team()
+    center.create_team()
 
     # Menu
     print("\nBegin your journey!")
@@ -58,7 +60,7 @@ def main():
                     
                     # Remove from poke and give to trainer
                     center.give_pokemon(sell_input)
-                    
+
                 # Trade or sell BUT inventory is empty
                 elif (center_input != 2 and len(center.team) == 0):
                     print("We are all out of Pokemon! Please come back another time or sell us Pokemon!")

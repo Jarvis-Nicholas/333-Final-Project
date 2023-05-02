@@ -27,20 +27,20 @@ class testPokemonOwner(unittest.TestCase):
         self.assertEqual(len(self.owner.team), 0)
     
     def test_add_pokemon(self):
-        self.owner.add_pokmeon(self.pokemon)
+        self.owner.add_pokemon(self.pokemon)
         self.assertEqual(len(self.owner.team), 1)
 
     def test_team_is_dead_true(self):
-        self.owner.add_pokmeon(self.pokemon)
-        self.owner.add_pokmeon(self.pokemon2)
+        self.owner.add_pokemon(self.pokemon)
+        self.owner.add_pokemon(self.pokemon2)
         self.pokemon.health = 0
         self.pokemon2.health = 0
 
         self.assertTrue(self.owner.team_is_dead())
 
     def test_team_is_dead_false(self):
-        self.owner.add_pokmeon(self.pokemon)
-        self.owner.add_pokmeon(self.pokemon2)
+        self.owner.add_pokemon(self.pokemon)
+        self.owner.add_pokemon(self.pokemon2)
         self.pokemon.health = 0
         self.pokemon2.health = 1
 
@@ -53,7 +53,7 @@ class testPokemonOwner(unittest.TestCase):
 
     def test_index_in_range_zeroes(self):
         # 0 to 0 (len of 1)
-        self.owner.add_pokmeon(self.pokemon)
+        self.owner.add_pokemon(self.pokemon)
         self.assertTrue(self.owner.index_in_range(1))
 
         # input 0, so really -1
@@ -62,8 +62,8 @@ class testPokemonOwner(unittest.TestCase):
 
     def test_index_in_range_greater_length(self):
         # Len > 1
-        self.owner.add_pokmeon(self.pokemon)
-        self.owner.add_pokmeon(self.pokemon)
+        self.owner.add_pokemon(self.pokemon)
+        self.owner.add_pokemon(self.pokemon)
 
         self.assertTrue(self.owner.index_in_range(1))
         self.assertTrue(self.owner.index_in_range(2))
@@ -73,8 +73,8 @@ class testPokemonOwner(unittest.TestCase):
 
 
     def test_swap_pokemon_correct_indices(self):
-        self.owner.add_pokmeon(self.pokemon)
-        self.owner.add_pokmeon(self.pokemon2)
+        self.owner.add_pokemon(self.pokemon)
+        self.owner.add_pokemon(self.pokemon2)
 
         # swap
         self.owner.swap_pokemon_team_members(0, 1)
@@ -83,8 +83,8 @@ class testPokemonOwner(unittest.TestCase):
 
     # Pokemon do not swap
     def test_swap_pokemon_incorrect_indices(self):
-        self.owner.add_pokmeon(self.pokemon)
-        self.owner.add_pokmeon(self.pokemon2)
+        self.owner.add_pokemon(self.pokemon)
+        self.owner.add_pokemon(self.pokemon2)
 
         small_index = -1
         large_index = 2
