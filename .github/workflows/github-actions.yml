@@ -70,4 +70,5 @@ jobs:
         with:
           context: ./Dockerfile
           push: true
-          tags: 333/homework/final/333-Final-Project:lastest, ghcr.io333/homework/final/333-Final-Project:lastest
+          tags: njarvis1/333_final_project:lastest
+          #ghcr.io333/homework/final/333-Final-Project:lastest
