@@ -21,6 +21,9 @@ def play_round(player1, player2):
 
         # Pokemon Attack
         player2.team[get_index(player2)].decrease_health(player1.team[get_index(player1)].attack())
+
+        # Display Health
+        player2.display_team()
     elif (battle_choice == 2):
         return True
 
