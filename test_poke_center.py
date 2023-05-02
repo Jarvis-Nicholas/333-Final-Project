@@ -20,9 +20,9 @@ class testPokemonTrainer(unittest.TestCase):
 
         # Save pokemon to teams
         self.pokemon = pk.Pokemon("name", "type", 10)
-        self.pokemon2 = pk.Pokemon("name2", "type2", 15)
+        self.pokemon1 = pk.Pokemon("name2", "type2", 15)
         self.center.add_pokemon(self.pokemon)
-        self.trainer.add_pokemon(self.pokemon2)
+        self.trainer.add_pokemon(self.pokemon1)
 
         # Indexing
         self.bad_index = -1

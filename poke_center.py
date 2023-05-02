@@ -24,7 +24,7 @@ class PokemonCenter (po.PokemonOwner):
             trainer.add_pokemon(self.team[input_index - 1])
 
             # Remove from poke center
-            self.team.remove_pokemon(self.team[input_index - 1])
+            self.remove_pokemon(self.team[input_index - 1])
 
 
     def take_pokemon(self, input_index, trainer):
@@ -32,7 +32,7 @@ class PokemonCenter (po.PokemonOwner):
         #if (input_index >= 0 and input_index <= len(self.team)):
         if (self.index_in_range(input_index - 1)):
             # Add to center
-            self.team.add_pokemon(trainer.team[input_index - 1])
+            self.add_pokemon(trainer.team[input_index - 1])
 
             # Remove from trainer
             trainer.remove_pokemon(trainer.team[input_index])
