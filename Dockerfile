@@ -2,8 +2,17 @@
 
 FROM python:3
 
+
+ADD main.py .
+
+RUN pip install requests beautifulsoup4
+
+CMD ["python, " "./main.py"]
+
+
+
 # /app accesses all files in current directory
-WORKDIR /usr/src/app
+#WORKDIR /usr/src/app
 
 
 #COPY requirements.txt ./
@@ -12,6 +21,6 @@ WORKDIR /usr/src/app
 #RUN pip update
 #RUN pip install --no-cache-dir -r
 # Copies all files from current directory
-COPY . .
+#COPY . .
 
-CMD [ "python", "./your-daemon-or-script.py" ]
+#CMD [ "python", "./your-daemon-or-script.py" ]
