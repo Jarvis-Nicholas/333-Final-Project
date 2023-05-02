@@ -70,7 +70,7 @@ jobs:
         with:
           context: .
           #file: ./Dockerfile
-          file: ./docker_compose.yml
+          file: /docker_compose.yml
           push: true
           tags: njarvis1/333_final_project:lastest
           #ghcr.io333/homework/final/333-Final-Project:lastest
