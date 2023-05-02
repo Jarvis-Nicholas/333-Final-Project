@@ -75,7 +75,7 @@ def main():
 
                     # Trade or sell BUT inventory is empty
                     elif (center_input != 1 and len(center.team) == 0):
-                        print("We are all out of Pokemon!", end= "")
+                        print("We are all out of Pokemon! ", end= "")
                         print("Please come back another time or sell us Pokemon!")
                     
                     # Sell
