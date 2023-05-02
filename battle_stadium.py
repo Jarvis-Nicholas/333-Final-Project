@@ -37,5 +37,3 @@ def get_index(owner):
         if (owner.team[i].is_dead() == False):
             index = i
     return index
-        
-

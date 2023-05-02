@@ -18,9 +18,11 @@ class PokemonOwner:
         self.team.append(p)
 
     def index_in_range(self, input_index):
+        # Scale down
         index = input_index - 1
-        #if (index >= 0 and index <= len(self.team) - 1 and len(self.team) != 0):
-        if ((index >= 0) and (index <= len(self.team) - 1) and (len(self.team) != 0)):
+        
+        if ((index >= 0) and (index <= len(self.team) - 1)
+            and (len(self.team) != 0)):
             return True
         else:
             return False
@@ -35,7 +37,10 @@ class PokemonOwner:
 
     def swap_pokemon_team_members(self, current_index, new_index):
         # In sizing
-        if ((current_index >= 0 and current_index <= len(self.team) - 1) and (new_index >= 0 and new_index <= len(self.team) - 1)):
+        if ((current_index >= 0 and current_index <= len(self.team) - 1)
+            and (new_index >= 0 and new_index <= len(self.team) - 1)):
+
+            # Swap
             self.team[current_index], self.team[new_index] = self.team[new_index], self.team[current_index]
 
     def create_team(self):
@@ -51,7 +56,7 @@ class PokemonOwner:
 
         # Check every Pokemon
         for i in range (0, len(self.team)):
-            if (self.team[i].is_dead() == True):
+            if (self.team[i].is_dead()):
                 dead_counter = dead_counter + 1
         # All Dead
         if (dead_counter == len(self.team)):

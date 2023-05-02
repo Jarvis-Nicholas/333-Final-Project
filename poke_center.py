@@ -11,7 +11,6 @@ class PokemonCenter (po.PokemonOwner):
 
     def give_pokemon(self, input_index, trainer):
         # In sizing
-        #if (input_index >= 0 and input_index <= len(self.team)):
         if (self.index_in_range(input_index)):
             # Add to trainer
             trainer.add_pokemon(self.team[input_index - 1])
@@ -21,7 +20,6 @@ class PokemonCenter (po.PokemonOwner):
 
     def take_pokemon(self, input_index, trainer):
         # In sizing
-        #if (input_index >= 0 and input_index <= len(self.team)):
         if (self.index_in_range(input_index)):
             # Add to center
             self.add_pokemon(trainer.team[input_index - 1])
@@ -31,7 +29,6 @@ class PokemonCenter (po.PokemonOwner):
 
     def trade_pokemon(self, trainer_index, center_index, trainer):
         # In sizing
-        #if ((trainer_index - 1 >= 0 and trainer_index - 1 <= len(trainer.team) - 1) and (center_index - 1 >= 0 and center_index -1 <= len(self.team) - 1)):
         if ((trainer.index_in_range(trainer_index)) and (self.index_in_range(center_index))): 
 
             # Temp
@@ -41,4 +38,3 @@ class PokemonCenter (po.PokemonOwner):
             #Swap
             trainer.team[trainer_index - 1] = self.team[center_index - 1]
             self.team[center_index - 1] = temp_trainer.team[0] 
-            #trainer.team[trainer_index - 1], self.team[center_index - 1] = trainer.team[center_index - 1], self.team[trainer_index - 1]

@@ -13,7 +13,7 @@ import pokemon as pk
 import pokemon_owner as po
 
 # Integration
-class testPokemonOwnerPokemon(unittest.TestCase):
+class testPokemonOwnerAndPokemon(unittest.TestCase):
     def setUp(self):
         self.owner = po.PokemonOwner()
         self.pokemon = pk.Pokemon("name", "type", 10)
