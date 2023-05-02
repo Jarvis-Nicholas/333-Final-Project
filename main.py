@@ -41,38 +41,55 @@ def main():
 
         if (user_input == 1):
             player.display_team()
-            switch_choice = int(input("Switch Pokemon around?  Yes: 1  No: 2  "))
+
+            # Swap choice
+            print("Switch Pokemon around?\n" +  "Yes: 1\n" +  "No: 2  ")
+            switch_choice = int(input())
+
             if(switch_choice == 1):
-                switch_input1 = int(input("Which Pokemon would you like to switch? "))
-                switch_input2 = int(input("Who do you want to switch with? "))
+                # Get input
+                switch_input1 = int(input("First Pokemon "))
+                switch_input2 = int(input("Second Pokemon "))
+
+                # Make swap
                 player.swap_pokemon_team_members(switch_input1 - 1, switch_input2 - 1)
                 player.display_team()
         elif (user_input == 2):
-                center.display_team()
-                
-                print("\n1: Buy Pokemon\n" + "2: Sell Pokemon\n" + "3: Trade Pokemon\n" + "4: Exit")
-                center_input = int(input())
-                
-                
-                # Sell
-                if (center_input == 2 ):
-                    sell_input = int(input("Which Pokemon would you like to sell?  ")) - 1
+                while True:
+                    center.display_team()
                     
-                    # Remove from poke and give to trainer
-                    center.give_pokemon(sell_input)
+                    # Get input
+                    print("\n1: Buy Pokemon\n" + "2: Sell Pokemon\n" + "3: Trade Pokemon\n" + "4: Exit")
+                    center_input = int(input())
+                    
+                    
+                    # Buy
+                    if (center_input == 1 ):
+                        buy_input = int(input("Which Pokemon would you like to buy?  ")) - 1
+                        
+                        # Remove from center and give to trainer
+                        center.give_pokemon(buy_input + 1, player)
 
-                # Trade or sell BUT inventory is empty
-                elif (center_input != 2 and len(center.team) == 0):
-                    print("We are all out of Pokemon! Please come back another time or sell us Pokemon!")
-                
-                # Buy
-                elif (center_input == 1):
-                    pass
+                    # Trade or sell BUT inventory is empty
+                    elif (center_input != 1 and len(center.team) == 0):
+                        print("We are all out of Pokemon! Please come back another time or sell us Pokemon!")
+                    
+                    # Sell
+                    elif (center_input == 2):
+                        sell_input = int(input("Which Pokemon would you like to sell?  ")) - 1
 
-                # Trade
-                elif (center_input == 3):
-                    pass
-                
+                        # Remove from trainer and give to center 
+                        center.take_pokemon(sell_input + 1, player)
+
+                    # Trade
+                    elif (center_input == 3):
+                        trade_input1 = int(input("Your Pokemon "))
+                        trade_input2 = int(input("Center Pokemon "))
+
+                        # Trade
+                        center.trade_pokemon(trade_input1 + 1, trade_input2 + 1, player)
+                    else:
+                        break
         elif (user_input == 3):
 
 
