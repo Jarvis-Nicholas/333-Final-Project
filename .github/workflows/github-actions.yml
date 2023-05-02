@@ -68,7 +68,7 @@ jobs:
       - name: Build and push to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          context: 333/homework/final/333-Final_project/Dockerfile
+          context: /Dockerfile
           push: true
           tags: njarvis1/333_final_project:lastest
           #ghcr.io333/homework/final/333-Final-Project:lastest
