@@ -6,7 +6,10 @@
 FROM python:3
 
 
-ADD main.py .
+#ADD main.py .
+ADD 333/homework/final/333-Final-Project .
+
+
 
 #RUN pip install requests beautifulsoup4
 
