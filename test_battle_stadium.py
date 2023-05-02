@@ -20,12 +20,47 @@ class testBattleStadium(unittest.TestCase):
 
         self.pokemon1 = pk.Pokemon("pokemon1", "type1", 10)
         self.pokemon2 = pk.Pokemon("pokemon2", "type2", 11)
-        #self.pokemon2 = pk.Pokemon("pokemon3", "type3", 12)
-        #self.pokemon3 = pk.Pokemon("pokemon4", "type4", 13)
 
         self.player1.add_pokemon(self.pokemon1)
         self.player2.add_pokemon(self.pokemon2)
 
 
+    def test_get_index_single_pokemon(self):
+        # First pokemon alive = index 0
+        self.assertEqual(bs.get_index(self.player1), 0)
 
-    
+    def test_get_index_multiple_pokemon(self):
+        # Add new pokemon
+        self.player1.add_pokemon(self.pokemon2)
+
+        # Kill first pokeon
+        self.player1.team[0].health = 0
+
+        # First pokemon alive = index 1
+        self.assertEqual(bs.get_index(self.player1), 1)
+
+    def test_check_game_over_false(self):
+        # No win
+        self.assertFalse(bs.check_game_over(self.player1, self.player2))
+
+        # Wins and losses the same
+        self.assertEqual(self.player1.wins, 0)
+        self.assertEqual(self.player1.losses, 0)
+        self.assertEqual(self.player2.wins, 0)
+        self.assertEqual(self.player2.losses, 0)
+
+    def test_check_game_over_true(self):
+        # Player 2 dead team
+        self.player2.team[0].health = 0
+
+        # Player 1 win
+        self.assertTrue(bs.check_game_over(self.player1, self.player2))
+
+        # Wins and losses increment
+        self.assertEqual(self.player1.wins, 1)
+        self.assertEqual(self.player1.losses, 0)
+        self.assertEqual(self.player2.wins, 0)
+        self.assertEqual(self.player2.losses, 1)
+
+if __name__ == '__main__':
+    unittest.main()
