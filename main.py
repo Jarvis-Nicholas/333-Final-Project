@@ -40,7 +40,7 @@ def main():
     
     while True:
         print("\n1: View Pokemon\n" + "2: Poke Center\n", end="")
-        print("3: Battle Stadium\n" +  "4: Lab  " + "5: Exit")
+        print("3: Battle Stadium\n" +  "4: Lab\n" + "5: Exit")
         user_input = int(input())
 
         if (user_input == 1):
