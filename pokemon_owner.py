@@ -17,6 +17,12 @@ class PokemonOwner:
     def add_pokmeon(self, p):
         self.team.append(p)
 
+    def index_in_range(self, input_index):
+        if (input_index >= 0 and input_index <= len(self.team)):
+            return True
+        else:
+            return False
+
     def display_team(self):
         # Print with alignment
         print('{:>12}  {:>12}  {:>12}'.format("NAME:", "TYPE:", "HEALTH:"), "\n")

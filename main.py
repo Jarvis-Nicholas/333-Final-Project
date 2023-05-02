@@ -54,8 +54,11 @@ def main():
                 
                 # Sell
                 if (center_input == 2 ):
-                    buy_input = int(input("Which Pokemon would you like to buy?  "))
-
+                    sell_input = int(input("Which Pokemon would you like to sell?  ")) - 1
+                    
+                    # Remove from poke and give to trainer
+                    center.give_pokemon(sell_input)
+                    
                 # Trade or sell BUT inventory is empty
                 elif (center_input != 2 and len(center.team) == 0):
                     print("We are all out of Pokemon! Please come back another time or sell us Pokemon!")
