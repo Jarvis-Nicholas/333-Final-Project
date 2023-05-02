@@ -11,6 +11,7 @@ Date: 4/25/2023
 import pokemon_trainer as pt
 import battle_stadium as bs
 import poke_center as pc
+import research_lab as rl
 
 def main():
     print("**************************************************")
@@ -38,7 +39,7 @@ def main():
     
     while True:
         print("\n1: View Pokemon\n" + "2: Poke Center\n", end="")
-        print("3: Battle Stadium\n" + "4: Exit")
+        print("3: Battle Stadium\n" +  "4: Lab  " + "5: Exit")
         user_input = int(input())
 
         if (user_input == 1):
@@ -96,7 +97,8 @@ def main():
                     else:
                         break
         elif (user_input == 3):
-
+            # Heal rival
+            rl.heal_team(rival)
 
             if (player.team_is_dead()):
                 print("All your Pokemon are DEAD! Please visit the Research Lab ASAP!")
@@ -106,7 +108,7 @@ def main():
             player1 = player
             player2 = rival
             game_over = False
-            """
+            
             while game_over == False:
                     # Dont want to get index unless sure that team has atleast 1 Pokemon alive
                     if (player)
@@ -114,11 +116,63 @@ def main():
                 # Play with alive Pokemon
                 player_index = bs.get_index(player)
                 rival_index = bs.get_index(rival)
-            """
-
-            # Heal rival
             
         elif (user_input == 4):
+            # Get input
+            print("\n1: Heal Team\n" + "2: Change Pokemon name\n", end ="")
+            print("3: Change Pokemon Type\n" + "4: Change Pokemon Health\n", end="")
+            print("5: Change Pokemon Max Health\n" + "6: Exit")
+            lab_input = int(input())
+            
+            if (lab_input == 1):
+                rl.heal_team(player)
+
+            elif (lab_input == 2):
+                # Get input
+                print("Which Pokemon would you like to rename?  ")
+                choice = int(input) - 1
+
+                print("What is their new name?  ")
+                input = str(input)  
+
+                # Rename
+                rl.change_pokemon_name(player, choice, input)              
+            
+            elif (lab_input == 3):
+                # Get input
+                print("Which Pokemon would you like to change type?  ")
+                choice = int(input) - 1
+
+                print("What is their new type?  ")
+                input = str(input)  
+
+                # Rename
+                rl.change_pokemon_type(player, choice, input)                   
+            elif (lab_input == 4):
+                # Get input
+                print("Which Pokemon would you like to change health?  ")
+                choice = int(input) - 1
+
+                print("What is their new health?  ")
+                input = int(input)  
+
+                # Rename
+                rl.change_pokemon_health(player, choice, input)                 
+            elif (lab_input == 5):
+                # Get input
+                print("Which Pokemon would you like to change max health?  ")
+                choice = int(input) - 1
+
+                print("What is their new max health?  ")
+                input = int(input)  
+
+                # Rename
+                rl.change_pokemon_max_health(player, choice, input)                  
+            elif (lab_input == 6):
+                break
+                
+                                                                  
+        elif (user_input == 5):
             exit()
         
         else:
