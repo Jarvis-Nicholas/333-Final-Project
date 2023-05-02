@@ -110,7 +110,7 @@ def main():
                 player2 = rival
                 game_over = False
                 
-                while game_over == False:
+                while game_over is False:
                     # Get input
                     print("\n1: Attack\n" + "2:Exit")
                     battle_choice = int(input)
@@ -119,7 +119,7 @@ def main():
                     #game_over = bs.check_game_over(player1, player2)
 
                     # Swap turns
-                    if (game_over == False):
+                    if (game_over is False):
                         # Temp variables
                         temp_trainer = pt.PokemonTrainer("temp")
                         temp_trainer = player1

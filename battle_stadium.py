@@ -40,6 +40,6 @@ def check_game_over(attacking_owner, victim_owner):
 def get_index(owner):
     index = 0
     for i in range (0, len(owner.team)):
-        if (owner.team[i].is_dead() == False):
+        if (owner.team[i].is_dead() is False):
             index = i
     return index
