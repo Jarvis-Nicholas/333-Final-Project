@@ -13,7 +13,7 @@ import pokemon as pk
 import poke_center as pc
 
 # Integration
-class testPokemonTrainer(unittest.TestCase):
+class testPokeCenter(unittest.TestCase):
     def setUp(self):
         self.center = pc.PokemonCenter()
         self.trainer = pt.PokemonTrainer("trainer name")

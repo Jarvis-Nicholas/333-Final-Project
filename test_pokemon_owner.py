@@ -46,7 +46,6 @@ class testPokemonOwner(unittest.TestCase):
 
         self.assertFalse(self.owner.team_is_dead()) 
 
-
     def test_index_in_range_empty_team(self):
         # Empty team
         self.assertFalse(self.owner.index_in_range(1))
