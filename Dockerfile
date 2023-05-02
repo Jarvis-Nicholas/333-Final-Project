@@ -6,8 +6,19 @@
 FROM python:3
 
 
-#ADD main.py .
-ADD 333/homework/final/333-Final-Project .
+ADD main.py .
+ADD poke_center.py .
+ADD pokemon_owner.py .
+ADD pokemon_trainer.py .
+ADD pokemon.py .
+ADD pokemon_list.txt .
+ADD resarch_lab.py .
+ADD battle_stadium.py .
+
+
+
+
+#ADD 333/homework/final/333-Final-Project .
 
 
 
