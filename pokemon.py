@@ -57,4 +57,5 @@ class Pokemon:
 
     def display_pokemon(self):
         # Print with alignment
-        print('{:>12}  {:>12}  {:>12}'.format(self.name, self.type, self.health), end = "")
+        print('{:>12}  {:>12}  {:>12}'.format(self.name, 
+                                              self.type, self.health), end = "")

@@ -29,7 +29,8 @@ class PokemonCenter (po.PokemonOwner):
 
     def trade_pokemon(self, trainer_index, center_index, trainer):
         # In sizing
-        if ((trainer.index_in_range(trainer_index)) and (self.index_in_range(center_index))): 
+        if ((trainer.index_in_range(trainer_index))
+            and (self.index_in_range(center_index))): 
 
             # Temp
             temp_trainer = pt.PokemonTrainer("temp")

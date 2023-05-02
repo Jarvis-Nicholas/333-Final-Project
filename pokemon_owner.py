@@ -20,7 +20,7 @@ class PokemonOwner:
     def index_in_range(self, input_index):
         # Scale down
         index = input_index - 1
-        
+
         if ((index >= 0) and (index <= len(self.team) - 1)
             and (len(self.team) != 0)):
             return True
@@ -35,13 +35,13 @@ class PokemonOwner:
             self.team[i].display_pokemon()
         print()
 
-    def swap_pokemon_team_members(self, current_index, new_index):
+    def swap_pokemon_team_members(self, first, sec):
         # In sizing
-        if ((current_index >= 0 and current_index <= len(self.team) - 1)
-            and (new_index >= 0 and new_index <= len(self.team) - 1)):
+        if ((first >= 0 and first <= len(self.team) - 1)
+            and (sec >= 0 and sec <= len(self.team) - 1)):
 
             # Swap
-            self.team[current_index], self.team[new_index] = self.team[new_index], self.team[current_index]
+            self.team[first], self.team[sec] = self.team[sec], self.team[first]
 
     def create_team(self):
         # Read input file
