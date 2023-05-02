@@ -5,9 +5,6 @@ Date: 4/25/2023
 """
 
 # Battle Stadium Utility Fucntions
- 
-
-
 
 def play_round(player1, player2):
     # Get input
@@ -30,14 +27,13 @@ def play_round(player1, player2):
     return check_game_over(player1, player2)
 
 # Check player who is getting attacked if their team is dead
-# Integrate 2
 def check_game_over(attacking_owner, victim_owner):
     # Victim died
     if (victim_owner.team_is_dead()):
 
         # Change stats
-        attacking_owner.wins = attacking_owner.wins + 1
-        victim_owner.losses = victim_owner.losses + 1
+        attacking_owner.increase_wins()
+        victim_owner.increase_losses()
 
         # End loop boolean
         return True
