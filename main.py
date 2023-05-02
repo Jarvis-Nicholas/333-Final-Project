@@ -100,23 +100,30 @@ def main():
             # Heal rival
             rl.heal_team(rival)
 
+            # All dead
             if (player.team_is_dead()):
                 print("All your Pokemon are DEAD! Please visit the Research Lab ASAP!")
-                break
+            else:
 
-            # First round
-            player1 = player
-            player2 = rival
-            game_over = False
-            
-            while game_over == False:
-                    # Dont want to get index unless sure that team has atleast 1 Pokemon alive
-                    if (player)
+                # First round
+                player1 = player
+                player2 = rival
+                game_over = False
+                
+                while game_over == False:
 
-                # Play with alive Pokemon
-                player_index = bs.get_index(player)
-                rival_index = bs.get_index(rival)
-            
+                    game_over = bs.play_round(player1, player2)
+                    #game_over = bs.check_game_over(player1, player2)
+
+                    # Swap turns
+                    if (game_over == False):
+                        # Temp variables
+                        temp_trainer = pt.PokemonTrainer("temp")
+                        temp_trainer = player1
+
+                        player1 = player2
+                        player2 = temp_trainer
+                
         elif (user_input == 4):
             # Get input
             print("\n1: Heal Team\n" + "2: Change Pokemon name\n", end ="")

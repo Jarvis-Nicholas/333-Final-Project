@@ -7,6 +7,25 @@ Date: 4/25/2023
 # Battle Stadium Utility Fucntions
  
 
+
+
+def play_round(player1, player2):
+    # Get input
+    print("\n1: Attack\n" + "2:Exit")
+    battle_choice = int(input)
+
+    # Attack
+    if (battle_choice == 1):
+        # Find first alive pokemon
+        #alive_index = bs.get_index(player1)
+
+        # Pokemon Attack
+        player2.team[get_index(player2)].decrease_health(player1.team[get_index(player1)].attack())
+    elif (battle_choice == 2):
+        return True
+
+    return check_game_over(player1, player2)
+
 # Check player who is getting attacked if their team is dead
 # Integrate 2
 def check_game_over(attacking_owner, victim_owner):
