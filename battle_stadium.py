@@ -6,10 +6,7 @@ Date: 4/25/2023
 
 # Battle Stadium Utility Fucntions
 
-def play_round(player1, player2):
-    # Get input
-    print("\n1: Attack\n" + "2:Exit")
-    battle_choice = int(input)
+def play_round(player1, player2, battle_choice):
 
     # Attack
     if (battle_choice == 1):
@@ -17,7 +14,7 @@ def play_round(player1, player2):
         #alive_index = bs.get_index(player1)
 
         # Pokemon Attack
-        player2.team[get_index(player2)].decrease_health(player1.team[get_index(player1)].attack())
+        player2.team[get_index(player2)].lose_health(player1.team[get_index(player1)].attack())
 
         # Display Health
         player2.display_team()

@@ -111,8 +111,11 @@ def main():
                 game_over = False
                 
                 while game_over == False:
+                    # Get input
+                    print("\n1: Attack\n" + "2:Exit")
+                    battle_choice = int(input)
 
-                    game_over = bs.play_round(player1, player2)
+                    game_over = bs.play_round(player1, player2, battle_choice)
                     #game_over = bs.check_game_over(player1, player2)
 
                     # Swap turns

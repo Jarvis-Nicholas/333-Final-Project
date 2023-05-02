@@ -24,6 +24,16 @@ class testBattleStadium(unittest.TestCase):
         self.player1.add_pokemon(self.pokemon1)
         self.player2.add_pokemon(self.pokemon2)
 
+    def test_play_round_exit_choice(self):
+        # battle_choice == 2
+        self.assertTrue(bs.play_round(self.player1, self.player2, 2))
+
+    def test_play_round_attack(self):
+        bs.play_round(self.player1, self.player2, 1)
+
+        # Health same and changed
+        self.assertEqual(self.player1.team[0].health, self.player1.team[0].max_health)
+        self.assertLess(self.player2.team[0].health, self.player2.team[0].max_health)
 
     def test_get_index_single_pokemon(self):
         # First pokemon alive = index 0
