@@ -68,8 +68,8 @@ def main():
                     
                     # Buy
                     if (center_input == 1 ):
-                        buy_input = int(input("Which Pokemon would you like to buy?  ")) - 1
-                        
+                        print("Which Pokemon would you like to buy?  ")
+                        buy_input = int(input) - 1
                         # Remove from center and give to trainer
                         center.give_pokemon(buy_input + 1, player)
 
@@ -80,7 +80,8 @@ def main():
                     
                     # Sell
                     elif (center_input == 2):
-                        sell_input = int(input("Which Pokemon would you like to sell?  ")) - 1
+                        print("Which Pokemon would you like to sell?  ")
+                        sell_input = int(input) - 1
 
                         # Remove from trainer and give to center 
                         center.take_pokemon(sell_input + 1, player)
