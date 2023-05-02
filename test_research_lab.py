@@ -14,7 +14,7 @@ import research_lab as rl
 
 
 # Integration
-class testPokemonTrainer(unittest.TestCase):
+class testResearchLab(unittest.TestCase):
     def setUp(self):
         self.owner = po.PokemonOwner()
         self.bad_index = -1
@@ -47,16 +47,16 @@ class testPokemonTrainer(unittest.TestCase):
 
     def test_change_pokemon_type(self):
         # No change
-        rl.change_pokemon_name(self.owner, self.bad_index, "new")
+        rl.change_pokemon_type(self.owner, self.bad_index, "new")
 
-        self.assertEqual(self.owner.team[0].name, self.pokemon.name)
-        self.assertNotEqual(self.owner.team[0].name, "new")
+        self.assertEqual(self.owner.team[0].type, self.pokemon.type)
+        self.assertNotEqual(self.owner.team[0].type, "new")
 
         # Change
         old_data = self.pokemon.type
-        rl.change_pokemon_name(self.owner, self.good_index, "new")
-        self.assertEqual(self.owner.team[0].name, "new")
-        self.assertNotEqual(self.owner.team[0].name, old_data)
+        rl.change_pokemon_type(self.owner, self.good_index, "new")
+        self.assertEqual(self.owner.team[0].type, "new")
+        self.assertNotEqual(self.owner.team[0].type, old_data)
 
     def test_change_pokemon_health(self):
         # No change
