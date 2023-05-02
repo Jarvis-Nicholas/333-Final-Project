@@ -9,14 +9,6 @@ import pokemon_owner as po
 
 class PokemonCenter (po.PokemonOwner):
 
-    def heal_team(owner):
-        for i in range (0, len(owner.team)):
-            owner.team[i].health = owner.team[i].max_health
-
-
-
-  
-
     def give_pokemon(self, input_index, trainer):
         # In sizing
         #if (input_index >= 0 and input_index <= len(self.team)):
@@ -26,7 +18,6 @@ class PokemonCenter (po.PokemonOwner):
 
             # Remove from poke center
             self.remove_pokemon(self.team[input_index - 1])
-
 
     def take_pokemon(self, input_index, trainer):
         # In sizing
@@ -51,7 +42,3 @@ class PokemonCenter (po.PokemonOwner):
             trainer.team[trainer_index - 1] = self.team[center_index - 1]
             self.team[center_index - 1] = temp_trainer.team[0] 
             #trainer.team[trainer_index - 1], self.team[center_index - 1] = trainer.team[center_index - 1], self.team[trainer_index - 1]
-            """
-def rename_pokemon(pokemon, new_name: str):
-    pokemon.name = new_name
-"""

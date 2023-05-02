@@ -77,7 +77,7 @@ def main():
 
 
             if (player.team_is_dead()):
-                print("All your Pokemon are DEAD!! Please visit the Poke Center ASAP!!!")
+                print("All your Pokemon are DEAD!! Please visit the Research Lab ASAP!!!")
                 exit()
 
             # First round

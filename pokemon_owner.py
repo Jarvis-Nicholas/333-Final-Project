@@ -38,8 +38,6 @@ class PokemonOwner:
         if ((current_index >= 0 and current_index <= len(self.team) - 1) and (new_index >= 0 and new_index <= len(self.team) - 1)):
             self.team[current_index], self.team[new_index] = self.team[new_index], self.team[current_index]
 
-
-
     def create_team(self):
         # Read input file
         for i in range(0, 6):
