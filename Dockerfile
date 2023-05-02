@@ -23,4 +23,4 @@ ADD test_research_lab.py .
 
 
 
-CMD ["python", "./main.py"]
+CMD ["python3", "./main.py"]
