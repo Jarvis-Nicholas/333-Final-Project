@@ -7,7 +7,7 @@ Date: 4/25/2023
 # coverage run -m unittest discover -b
 # coverage report
 
-
+    
 import pokemon_trainer as pt
 import battle_stadium as bs
 import poke_center as pc
@@ -18,9 +18,9 @@ def main():
     print("                  ---------------\n                 | POKEMON FUN!! |") 
     print("                  ---------------\n")
 
-    """
+    
     print("This is the deployment test!!!")
-    """
+    
 
     user_name = str(input("Welcome to your Pokemon adventure!! What is your name?\n"))
     
