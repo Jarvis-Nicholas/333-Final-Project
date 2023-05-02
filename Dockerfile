@@ -24,7 +24,7 @@ ADD battle_stadium.py .
 
 #RUN pip install requests beautifulsoup4
 
-CMD ["python, " "./main.py"]
+CMD ["python", "./main.py"]
 
 
 
