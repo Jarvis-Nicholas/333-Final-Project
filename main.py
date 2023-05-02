@@ -143,41 +143,41 @@ def main():
                 index = int(input) - 1
 
                 print("What is their new name?  ")
-                index = str(input)  
+                choice = str(input)  
 
                 # Rename
-                rl.change_pokemon_name(player, choice, index)              
+                rl.change_pokemon_name(player, index, choice)              
             
             elif (lab_input == 3):
                 # Get input
                 print("Which Pokemon would you like to change type?  ")
-                choice = int(input) - 1
+                index = int(input) - 1
 
                 print("What is their new type?  ")
-                index = str(input)  
+                choice = str(input)  
 
                 # Rename
-                rl.change_pokemon_type(player, choice, index)                   
+                rl.change_pokemon_type(player, index, choice)                   
             elif (lab_input == 4):
                 # Get input
                 print("Which Pokemon would you like to change health?  ")
-                choice = int(input) - 1
+                index = int(input) - 1
 
                 print("What is their new health?  ")
-                index = int(input)  
+                choice = int(input)  
 
                 # Rename
-                rl.change_pokemon_health(player, choice, index)                 
+                rl.change_pokemon_health(player, index, choice)                 
             elif (lab_input == 5):
                 # Get input
                 print("Which Pokemon would you like to change max health?  ")
-                choice = int(input) - 1
+                index = int(input) - 1
 
                 print("What is their new max health?  ")
-                index = int(input)  
+                choice = int(input)  
 
                 # Rename
-                rl.change_pokemon_max_health(player, choice, index)                  
+                rl.change_pokemon_max_health(player, index, choice)                  
             elif (lab_input == 6):
                 break
                 
