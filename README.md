@@ -27,7 +27,7 @@ This automatic deployment was made possible through a github workflow. Github ac
 1. Open up "github-actions.yml"
 2. Add a new job named "Deploy-Image-To-DockerHub:"
 3. Add "needs: build"
-  3. This makes it so that "Deploy-Image-To-DockerHub:" only executes if the automated testing is sucessful
+  Sub 3. This makes it so that "Deploy-Image-To-DockerHub:" only executes if the automated testing is sucessful
   3b. "Checkout code" , "set up Qemo", and "Set up Docker Buildx" are all pre-checks to make a Docker image
   3c. "Login to Docker Hub" provides the username and token needed to log in
     3ca. It is best practice to make these "secret" variables. Othwerise, anyone can see the login information
