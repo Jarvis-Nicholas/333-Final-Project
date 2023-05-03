@@ -36,7 +36,7 @@ This automatic deployment was made possible through a github workflow. Github ac
     * "Build and push to Docker Hub"
         * Takes the Dockerfile within the application and pushes its corresponding image to the Docker Hub respository
         * The name of the repository is provided by "tags"
-#### Docker Hub Terminal Commands
+#### Docker Terminal Commands
 * Pull
   * docker pull njarvis1/333_final_project:lastest
 * Run
