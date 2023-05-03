@@ -26,13 +26,13 @@ Link to Docker Hub Repository: https://hub.docker.com/r/njarvis1/333_final_proje
 This automatic deployment was made possible through a github workflow. Github actions written in the github-actions.yml file are what deployed the application as an image to Docker Hub. Additionally, a Dockerfile is needed within one's own application so that the image may be built. This Dockerfile should lay out the files included in the image and their programming language type.
 * Open up "github-actions.yml"
 * Add a new job named "Deploy-Image-To-DockerHub:"
-* "needs: build"
-  * This makes it so that "Deploy-Image-To-DockerHub:" only executes if the automated testing is sucessful
-* "Checkout code" , "set up Qemo", and "Set up Docker Buildx" are all pre-checks to make a Docker image
-* "Login to Docker Hub" provides the username and token needed to log in
-  * It is best practice to make these "secret" variables. Othwerise, anyone can see the login information
-* "Build and push to Docker Hub" takes the Dockerfile within the application and pushes it to the Docker Hub respository
-  * The name of the repository is provided by "tags"
+    * "needs: build"
+        * This makes it so that "Deploy-Image-To-DockerHub:" only executes if the automated testing is sucessful
+    * "Checkout code" , "set up Qemo", and "Set up Docker Buildx" are all pre-checks to make a Docker image
+    * "Login to Docker Hub" provides the username and token needed to log in
+        * It is best practice to make these "secret" variables. Othwerise, anyone can see the login information
+    * "Build and push to Docker Hub" takes the Dockerfile within the application and pushes it to the Docker Hub respository
+        * The name of the repository is provided by "tags"
 #### Docker Hub Terminal Commands
 * Pull
   * docker pull njarvis1/333_final_project:lastest
