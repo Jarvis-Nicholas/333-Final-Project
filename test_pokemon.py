@@ -30,10 +30,6 @@ class testPokemon(unittest.TestCase):
         self.assertLessEqual(self.pokemon.attack(), 20)
 
     def test_gain_health_overflow(self):
-        # Mark new health
-        #self.pokemon.health = 5
-        #self.new_health = self.pokemon.health + 1
-
         # Increase health
         self.pokemon.gain_health(100)
         self.assertEqual(self.pokemon.health, self.pokemon.max_health)
@@ -58,7 +54,6 @@ class testPokemon(unittest.TestCase):
         # Lose health
         self.pokemon.lose_health(1)
         self.assertEqual(self.new_health, self.pokemon.health)
-
 
     def test_lose_health_negative_to_zero(self):
         # Lose more than max
@@ -96,7 +91,7 @@ class testPokemon(unittest.TestCase):
         self.pokemon.kills = 5
         self.assertEqual(self.pokemon.get_kd(), self.pokemon.kills)
 
-    def test_kd_frational(self):
+    def test_kd_fractional(self):
         self.pokemon.deaths = 2
         self.pokemon.kills = 5
         self.assertEqual(self.pokemon.get_kd(), 5.0 / 2.0)

@@ -33,6 +33,7 @@ class PokemonOwner:
         for i in range(0, len(self.team)):
             print(i + 1, end="")
             self.team[i].display_pokemon()
+            print()
         print()
 
     def swap_pokemon_team_members(self, first, sec):
@@ -48,7 +49,7 @@ class PokemonOwner:
         for i in range(0, 6):
             input_line = random.choice(list(open('pokemon_list.txt')))
             parsed_line = input_line.split(" ")
-            pokemon = pk.Pokemon(parsed_line[0], parsed_line[1], parsed_line[2])
+            pokemon = pk.Pokemon(parsed_line[0], parsed_line[1], int(parsed_line[2]))
             self.team.append(pokemon)
 
     def team_is_dead(self):

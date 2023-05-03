@@ -18,21 +18,20 @@ class Pokemon:
         self.deaths = 0.0
 
     def attack(self):
-        nums = []
+        nums: int = []
         for i in range(1, 20):
             nums.append(i)
 
-        return random.choice(nums)
+        return int(random.choice(nums))
     
-    def gain_health(self, h):
+    def gain_health(self, h: int):
         # Given too much health
         if (h + self.health > self.max_health):
             self.health = self.max_health
         else:
             self.health = self.health + h
 
-
-    def lose_health(self, h):
+    def lose_health(self, h: int):
         self.health = self.health - h
 
         if (self.health < 0):
