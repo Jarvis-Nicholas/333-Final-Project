@@ -58,7 +58,6 @@ class testPokemonOwner(unittest.TestCase):
         # input 0, so really -1
         self.assertFalse(self.owner.index_in_range(0))
 
-
     def test_index_in_range_greater_length(self):
         # Len > 1
         self.owner.add_pokemon(self.pokemon)
@@ -69,7 +68,6 @@ class testPokemonOwner(unittest.TestCase):
 
         # Index == len (false return)
         self.assertFalse(self.owner.index_in_range(3))
-
 
     def test_swap_pokemon_correct_indices(self):
         self.owner.add_pokemon(self.pokemon)

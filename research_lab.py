@@ -4,6 +4,7 @@ CS 333 Final Project: Pokemon
 Date: 4/25/2023
 """
 
+# Research Lab utility functions
 def heal_team(owner):
     for i in range (0, len(owner.team)):
         owner.team[i].health = owner.team[i].max_health

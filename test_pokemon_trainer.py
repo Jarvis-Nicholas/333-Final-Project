@@ -32,6 +32,5 @@ class testPokemonTrainer(unittest.TestCase):
 
         self.assertEqual(old_losses + 1, self.trainer.losses)
 
-
 if __name__ == '__main__':
     unittest.main()

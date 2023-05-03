@@ -21,6 +21,4 @@ ADD test_pokemon_trainer.py .
 ADD test_pokemon.py .
 ADD test_research_lab.py .
 
-
-
 CMD ["python3", "./main.py"]
