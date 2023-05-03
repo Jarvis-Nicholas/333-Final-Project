@@ -8,14 +8,14 @@ The testing for this application is automated through "pytest". Within the appli
 
 ### Documenation for Replication:
 This automatic testing was made possible through github workflows and github actions laid out within a yml file
-1. Create the github-actions.yml file
-  1a: On Github, click "Add file", "Create new file", and name the file ".github/workflow/github-actions.yml"
-2. Create actions within github-actions.yml
-  2a. "on : [push]" makes the workflow execute whenever code is pushed to the repository
-  2b. "steps" is where the desired executables are outlined
-  2c. "Install dependencies" installs python and pytest so that tests may be ran
-  2d. "Lint with ruff" checks the application files for proper code formatting and syntax
-  2e. "Test with pytest" runs the actual tests
+* Create the github-actions.yml file
+  * On Github, click "Add file", "Create new file", and name the file ".github/workflow/github-actions.yml"
+  * Create actions within github-actions.yml
+  * "on : [push]" makes the workflow execute whenever code is pushed to the repository
+  * "steps" is where the desired executables are outlined
+  * "Install dependencies" installs python and pytest so that tests may be ran
+  * "Lint with ruff" checks the application files for proper code formatting and syntax
+  * "Test with pytest" runs the actual tests
 
 ## Automatic Deployment:
 The deployment for this application is automated through github Actions and Docker Hub. After the tests sucessfully run, an image is built for the application. This image is then pushed to Docker Hub after the correct Docker login credentials are provided. These credentials are hidden as "secret" variables, as provided by Github for this repository. Now, the image resides within a Docker Hub repository named "njarvis1/333_final_project". This is a public repository, so anyone with the link may pull the image from the repository to their own machine. Then, they may "run" the image, which in turn creates a container that runs. The container allows anyone to run the Pokemon application without having to had accessed my Github repository or download the files to their own IDE.
