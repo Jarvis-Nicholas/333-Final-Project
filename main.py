@@ -145,7 +145,10 @@ def main():
                 print("3: Change Pokemon Type\n" + "4: Change Pokemon Health\n", end="")
                 print("5: Change Pokemon Max Health\n" + "6: Exit")
                 lab_input = int(input())
-                player.display_team()
+
+                # Display
+                if (lab_input != 6):
+                    player.display_team()
 
                 # Heal team
                 if (lab_input == 1):
@@ -160,7 +163,7 @@ def main():
                     print("What is their new name?  ")
                     choice = str(input())  
 
-                    # Rename
+                    # Change
                     rl.change_pokemon_name(player, index, choice)              
                 
                 # Change type
@@ -172,7 +175,7 @@ def main():
                     print("What is their new type?  ")
                     choice = str(input())  
 
-                    # Rename
+                    # Change
                     rl.change_pokemon_type(player, index, choice)   
 
                 # Change health                
@@ -184,7 +187,7 @@ def main():
                     print("What is their new health?  ")
                     choice = int(input())  
 
-                    # Rename
+                    # Change
                     rl.change_pokemon_health(player, index, choice)     
 
                 # Change max_health            
@@ -196,7 +199,7 @@ def main():
                     print("What is their new max health?  ")
                     ch = int(input())  
 
-                    # Rename
+                    # Change
                     rl.change_pokemon_max_health(player, index, ch)      
 
                 # Exit            
