@@ -34,7 +34,7 @@ This automatic deployment was made possible through a github workflow. Github ac
         * Provides the username and token needed to log in
         * It is best practice to make these "secret" variables. Othwerise, anyone can see the login information
     * "Build and push to Docker Hub"
-        * Takes the Dockerfile within the application and pushes it to the Docker Hub respository
+        * Takes the Dockerfile within the application and pushes its corresponding image to the Docker Hub respository
         * The name of the repository is provided by "tags"
 #### Docker Hub Terminal Commands
 * Pull
