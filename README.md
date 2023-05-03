@@ -24,11 +24,11 @@ Link to Docker Hub Repository: https://hub.docker.com/r/njarvis1/333_final_proje
 
 ### Documenation for Replication:
 This automatic deployment was made possible through a github workflow. Github actions written in the github-actions.yml file are what deployed the application as an image to Docker Hub. Additionally, a Dockerfile is needed within one's own application so that the image may be built. This Dockerfile should lay out the files included in the image and their programming language type.
-* 1. Open up "github-actions.yml"
-* 2. Add a new job named "Deploy-Image-To-DockerHub:"
-* 3. Add "needs: build"
-  3a. This makes it so that "Deploy-Image-To-DockerHub:" only executes if the automated testing is sucessful
-  3b. "Checkout code" , "set up Qemo", and "Set up Docker Buildx" are all pre-checks to make a Docker image
+* Open up "github-actions.yml"
+* Add a new job named "Deploy-Image-To-DockerHub:"
+* Add "needs: build"
+  * This makes it so that "Deploy-Image-To-DockerHub:" only executes if the automated testing is sucessful
+  * "Checkout code" , "set up Qemo", and "Set up Docker Buildx" are all pre-checks to make a Docker image
   3c. "Login to Docker Hub" provides the username and token needed to log in
     3ca. It is best practice to make these "secret" variables. Othwerise, anyone can see the login information
   3d. "Build and push to Docker Hub" takes the Dockerfile within the application and pushes it to the Docker Hub respository
