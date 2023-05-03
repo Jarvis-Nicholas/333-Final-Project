@@ -8,9 +8,9 @@ The testing for this application is automated through "pytest". Within the appli
 
 ### Documenation for Replication:
 This automatic testing was made possible through github workflows and github actions laid out within a yml file
-1: Create the github-actions.yml file
+1. Create the github-actions.yml file
   1a: On Github, click "Add file", "Create new file", and name the file ".github/workflow/github-actions.yml"
-2: Create actions within github-actions.yml
+2. Create actions within github-actions.yml
   2a: "on : [push]" makes the workflow execute whenever code is pushed to the repository
   2b: "steps" is where the desired executables are outlined
   2c: "Install dependencies" installs python and pytest so that tests may be ran
@@ -24,9 +24,9 @@ Link to Docker Hub Repository: https://hub.docker.com/r/njarvis1/333_final_proje
 
 ### Documenation for Replication:
 This automatic deployment was made possible through a github workflow. Github actions written in the github-actions.yml file are what deployed the application as an image to Docker Hub. Additionally, a Dockerfile is needed within one's own application so that the image may be built. This Dockerfile should lay out the files included in the image and their programming language type.
-1: Open up "github-actions.yml"
-2: Add a new job named "Deploy-Image-To-DockerHub:"
-3: Add "needs: build"
+1. Open up "github-actions.yml"
+2. Add a new job named "Deploy-Image-To-DockerHub:"
+3. Add "needs: build"
   3a: This makes it so that "Deploy-Image-To-DockerHub:" only executes if the automated testing is sucessful
   3b: "Checkout code" , "set up Qemo", and "Set up Docker Buildx" are all pre-checks to make a Docker image
   3c: "Login to Docker Hub" provides the username and token needed to log in
