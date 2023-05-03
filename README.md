@@ -33,7 +33,7 @@ This automatic deployment was made possible through a github workflow. Github ac
   * It is best practice to make these "secret" variables. Othwerise, anyone can see the login information
 * "Build and push to Docker Hub" takes the Dockerfile within the application and pushes it to the Docker Hub respository
   * The name of the repository is provided by "tags"
-#### Note:
+#### *Note:*
 * Pull from Docker Hub terminal command
   * docker pull njarvis1/333_final_project:lastest
 * Run
