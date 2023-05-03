@@ -28,10 +28,13 @@ This automatic deployment was made possible through a github workflow. Github ac
 * Add a new job named "Deploy-Image-To-DockerHub:"
     * "needs: build"
         * This makes it so that "Deploy-Image-To-DockerHub:" only executes if the automated testing is sucessful
-    * "Checkout code" , "set up Qemo", and "Set up Docker Buildx" are all pre-checks to make a Docker image
-    * "Login to Docker Hub" provides the username and token needed to log in
+    * "Checkout code" , "set up Qemo", and "Set up Docker Buildx" 
+        * Pre-checks to make a Docker image
+    * "Login to Docker Hub"
+        * Provides the username and token needed to log in
         * It is best practice to make these "secret" variables. Othwerise, anyone can see the login information
-    * "Build and push to Docker Hub" takes the Dockerfile within the application and pushes it to the Docker Hub respository
+    * "Build and push to Docker Hub"
+        * Takes the Dockerfile within the application and pushes it to the Docker Hub respository
         * The name of the repository is provided by "tags"
 #### Docker Hub Terminal Commands
 * Pull
