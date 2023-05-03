@@ -128,7 +128,7 @@ def main():
                     battle_choice = int(input())
 
                     # Player turn
-                    if (counter % 2 == 0):
+                    if (counter % 2 != 0):
                         game_over = bs.play_round(player, rival, battle_choice)
                     else:
                         game_over = bs.play_round(rival, player, battle_choice)
