@@ -6,7 +6,7 @@ This is a scaled down version of Pokemon. It operates mostly in part to user def
 ## Automatic Testing:
 The testing for this application is automated through "pytest". Within the application, there are multiple files that perform unit tests and integration tests. When a push is made to this github repository, a worflow is initiated. Due to github Actions, the application is built in different version of python (3.7, 3.8, 3.9, 3.10, 3.11). Pytest is then ran in each build, checking the assert statements contained within the body of the application.
 
-### Documenation for Replication:
+### Documentation for Replication:
 This automatic testing was made possible through github workflows and github actions laid out within a yml file
 * Create the github-actions.yml file
   * On Github, click "Add file", "Create new file", and name the file ".github/workflow/github-actions.yml"
@@ -22,7 +22,7 @@ The deployment for this application is automated through github Actions and Dock
 
 Link to Docker Hub Repository: https://hub.docker.com/r/njarvis1/333_final_project
 
-### Documenation for Replication:
+### Documentation for Replication:
 This automatic deployment was made possible through a github workflow. Github actions written in the github-actions.yml file are what deployed the application as an image to Docker Hub. Additionally, a Dockerfile is needed within one's own application so that the image may be built. This Dockerfile should lay out the files included in the image and their programming language type.
 * Open up "github-actions.yml"
 * Add a new job named "Deploy-Image-To-DockerHub:"
