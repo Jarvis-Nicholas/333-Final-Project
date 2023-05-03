@@ -119,26 +119,23 @@ def main():
             else:
 
                 # First round
-                player1 = player
-                player2 = rival
                 game_over = False
-                
+                counter = 1
                 while game_over is False:
-
+                    
                     # Get input
                     print("\n1: Attack\n" + "2: Exit")
                     battle_choice = int(input())
 
-                    game_over = bs.play_round(player1, player2, battle_choice)
+                    # Player turn
+                    if (counter % 2 == 0):
+                        game_over = bs.play_round(player, rival, battle_choice)
+                    else:
+                        game_over = bs.play_round(rival, player, battle_choice)
 
                     # Swap turns
-                    if (game_over is False):
-                        # Temp variables
-                        temp_trainer = pt.PokemonTrainer("temp")
-                        temp_trainer = player1
+                    counter = counter + 1
 
-                        player1 = player2
-                        player2 = temp_trainer
         # Research Lab
         elif (user_input == 4):
             while True:

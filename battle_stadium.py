@@ -11,13 +11,12 @@ def play_round(player1, player2, battle_choice):
     # Attack
     if (battle_choice == 1):
         # Find first alive pokemon
-        #alive_index = bs.get_index(player1)
-        print("ATAKLJALKJALKJALKJALKJALKJ")
         # Pokemon Attack
         health_loss: int = player1.team[get_index(player1)].attack()
         player2.team[get_index(player2)].lose_health(health_loss)
 
         # Display Health
+        print("\n" + player2.name + " Team:")
         player2.display_team()
     elif (battle_choice == 2):
         return True
@@ -42,5 +41,5 @@ def get_index(owner):
     index: int = 0
     for i in range (0, len(owner.team)):
         if (owner.team[i].is_dead() is False):
-            index = i
+            return i
     return index
