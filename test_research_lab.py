@@ -46,7 +46,6 @@ class testResearchLab(unittest.TestCase):
         self.assertEqual(self.owner.team[0].name, "new")
         self.assertNotEqual(self.owner.team[0].name, old_data)
 
-
     def test_change_pokemon_type_no_change(self):
         # No change
         rl.change_pokemon_type(self.owner, self.bad_index, "new")

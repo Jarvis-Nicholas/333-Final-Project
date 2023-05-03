@@ -155,7 +155,7 @@ def main():
                 elif (lab_input == 2):
                     # Get input
                     print("Which Pokemon would you like to rename?  ")
-                    index = int(input()) - 1
+                    index = int(input())
 
                     print("What is their new name?  ")
                     choice = str(input())  
@@ -167,7 +167,7 @@ def main():
                 elif (lab_input == 3):
                     # Get input
                     print("Which Pokemon would you like to change type?  ")
-                    index = int(input()) - 1
+                    index = int(input())
 
                     print("What is their new type?  ")
                     choice = str(input())  
@@ -179,7 +179,7 @@ def main():
                 elif (lab_input == 4):
                     # Get input
                     print("Which Pokemon would you like to change health?  ")
-                    index = int(input()) - 1
+                    index = int(input())
 
                     print("What is their new health?  ")
                     choice = int(input())  
@@ -191,7 +191,7 @@ def main():
                 elif (lab_input == 5):
                     # Get input
                     print("Which Pokemon would you like to change max health?  ")
-                    index = int(input()) - 1
+                    index = int(input())
 
                     print("What is their new max health?  ")
                     ch = int(input())  
